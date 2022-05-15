@@ -12,9 +12,25 @@ namespace Graph_Visualiser
 {
     public partial class Form1 : Form
     {
+        Bitmap bitmap;
+
         public Form1()
         {
             InitializeComponent();
+            GraphicsPanel.Size = new Size(this.Width, this.Height);
+            bitmap = new Bitmap(GraphicsPanel.Width, GraphicsPanel.Height);
+            Painter p = new Painter(bitmap, GraphicsPanel);
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            GraphicsPanel.Size = new Size(this.Width, this.Height);
+        }
+
+        private void GraphicsPanel_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.DrawImageUnscaled(bitmap, 0, 0);
         }
     }
 }
