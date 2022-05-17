@@ -10,5 +10,16 @@ namespace Graph_Visualiser
     {
         private string _name;
         private byte _nodes_no;
+        private Node _node;
+
+        public Algorithms()
+        {
+
+        }
+
+        public void Execute()
+        {
+
+        }
     }
 }

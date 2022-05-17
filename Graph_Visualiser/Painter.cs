@@ -18,7 +18,18 @@ namespace Graph_Visualiser
         public Painter(Bitmap bitmap, Panel panel)
         {
             g = Graphics.FromImage(bitmap);
+            x = panel.Width / 2;
         }
+
+        public void DrawNode(Node inNode, int inDepth, int inX)
+        {
+
+            y = inDepth * 100;
+            x = (inX * 100);
+            g.DrawEllipse(p, x, y, 50, 50);
+
+        }
+
 
     }
 }

@@ -19,7 +19,7 @@ namespace Graph_Visualiser
             InitializeComponent();
             GraphicsPanel.Size = new Size(this.Width, this.Height);
             bitmap = new Bitmap(GraphicsPanel.Width, GraphicsPanel.Height);
-            Painter p = new Painter(bitmap, GraphicsPanel);
+            DrawGraph drawGraph = new DrawGraph(bitmap, GraphicsPanel);
         }
 
         private void Form1_Resize(object sender, EventArgs e)
